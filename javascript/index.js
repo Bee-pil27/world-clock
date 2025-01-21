@@ -22,6 +22,18 @@ function updateTime() {
       "h:mm:ss[<small>]A[</small>]"
     );
   }
+
+  let cairoElement = document.querySelector("#cairo");
+  if (cairoElement) {
+    let cairoDateElement = cairoElement.querySelector(".date");
+    let cairoTimeElement = cairoElement.querySelector(".time");
+    let cairoTime = moment().tz("Africa/Cairo");
+
+    cairoDateElement.innerHTML = cairoTime.format("MMMM Do YYYY");
+    cairoTimeElement.innerHTML = cairoTime.format(
+      "h:mm:ss [<small>]A[</small>]"
+    );
+  }
 }
 
 function updateCity(event) {
